@@ -1,0 +1,53 @@
+﻿@model Usuario;
+
+<form class="form-horizontal" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <fieldset>
+        <legend>Dados do Endereço</legend>
+    <div class="form-group" id="Cep">
+        <label asp-for="Endereco.cep"></label>
+        <input placeholder="CEP" type="text" style="max-width: 250px" class="form-control" asp-for="Endereco.cep" />
+        <span asp-validation-for="Endereco.cep" class="text-danger"></span>
+    </div>
+    <input type="submit" value="Buscar" class="btn btn-secondary" asp-action="BuscarCep" asp-controller="Usuario"/>
+
+    <div class="form-group" id="Logradouro">
+        <label asp-for="Endereco.logradouro"></label>
+        <input placeholder="Rua" type="text" style="max-width: 250px" class="form-control" asp-for="Endereco.logradouro" />
+        <span asp-validation-for="Endereco.logradouro" class="text-danger"></span>
+    </div>
+    <div class="form-group" id="Bairro">
+        <label asp-for="Endereco.bairro"></label>
+        <input placeholder="Bairro" type="text" style="max-width: 250px" class="form-control" asp-for="Endereco.bairro" />
+        <span asp-validation-for="Endereco.bairro" class="text-danger"></span>
+    </div>
+    <div class="form-group" id="Localidade">
+        <label asp-for="Endereco.localidade"></label>
+        <input placeholder="Cidade" type="text" style="max-width: 250px" class="form-control" asp-for="Endereco.localidade" />
+        <span asp-validation-for="Endereco.localidade" class="text-danger"></span>
+    </div>
+    <div class="form-group" id="Uf">
+        <label asp-for="Endereco.uf"></label>
+        <input placeholder="UF" type="text" style="max-width: 250px" class="form-control" asp-for="Endereco.uf" />
+        <span asp-validation-for="Endereco.uf" class="text-danger"></span>
+    </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Dados Pessoais</legend>
+        <h2>fazer cadastro dados</h2>
+    <div>
+        <label asp-for="email"></label>
+        <input placeholder="Seu Email:" type="text" style="max-width: 250px" class="form-control" asp-for="email" />
+        <span asp-validation-for="email" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="senha"></label>
+        <input placeholder="Sua Senha:" type="text" style="max-width: 250px" class="form-control" asp-for="senha" />
+        <span asp-validation-for="senha" class="text-danger"></span>
+    </div>
+    </fieldset>
+
+    <input type="submit" class="btn btn-primary" value="Cadastrar" />
+    <input type="submit" class="btn btn-info" value="Voltar" />
+</form>

@@ -1,0 +1,37 @@
+﻿@model Produto;
+
+<form asp-action="Cadastrar" method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group" id="Nome">
+        <label asp-for="Nome"></label>
+        <input placeholder="Nome do produto" type="text" style="max-width: 360px" class="form-control" asp-for="Nome" />
+        <span asp-validation-for="Nome" class="text-danger"></span>
+    </div>
+    <div class="form-group" id="Descricao">
+        <label asp-for="Descricao"></label>
+        <input type="text" placeholder="Descrição do produto" style="max-width: 360px" class="form-control" asp-for="Descricao" />
+        <span asp-validation-for="Descricao" class="text-danger"></span>
+    </div>
+    <div class="form-group" id="Preco">
+        <label asp-for="Preco"></label>
+        <input type="text" placeholder="Preço do produto" style="max-width: 360px" class="form-control" asp-for="Preco" />
+        <span asp-validation-for="Preco" class="text-danger"></span>
+    </div>
+    <div class="form-group" id="Quantidade">
+        <label asp-for="Quantidade"></label>
+        <input type="text" placeholder="Quantidade do produto" style="max-width: 360px" class="form-control" asp-for="Quantidade" />
+        <span asp-validation-for="Quantidade" class="text-danger"></span>
+    </div>
+    <div class="form-group" id="CategoriaId">
+        <label>Categoria</label>
+        <select asp-items="@ViewBag.Categorias" style="max-width: 360px" class="form-control" name="drpCategorias">
+            <option> -- Selecione --</option>
+        </select>
+    </div>
+    <div class="form-group" id="Imagem">
+        <label>Imagem</label>
+        <input type="file" name="fupImagem" style="max-width: 360px" class="form-control" />
+    </div>
+
+    <input type="submit" class="btn btn-primary" value="Cadastrar" />
+</form>
